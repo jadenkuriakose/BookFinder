@@ -1,0 +1,16 @@
+<books>
+  <book>
+    <title>The Great Gatsby</title>
+    <author>F. Scott Fitzgerald</author>
+    <isbn>9780743273565</isbn>
+    <genre>Fiction</genre>
+    <publishedYear>1925</publishedYear>
+  </book>
+  <book>
+    <title>To Kill a Mockingbird</title>
+    <author>Harper Lee</author>
+    <isbn>9780060935467</isbn>
+    <genre>Fiction</genre>
+    <publishedYear>1960</publishedYear>
+  </book>
+</books>
