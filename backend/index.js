@@ -1,17 +1,17 @@
 const express = require('express');
-const jwt = require('jsonwebtoken');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const jwt = require('jsonwebtoken');
 const fs = require('fs');
 const { XMLParser } = require('fast-xml-parser');
 
 const app = express();
+
 app.use(bodyParser.json());
 app.use(cors());
 
-const SECRET_KEY = 'your-secret-key';
 const parser = new XMLParser();
-const users = [];
+const secretKey = 'your-secret-key';
 
 const loadBooks = () => {
     const xmlData = fs.readFileSync('./books.xml', 'utf-8');
@@ -19,37 +19,43 @@ const loadBooks = () => {
     return jsonData.books.book;
 };
 
+const users = [];
+
+const generateToken = (user) => {
+    return jwt.sign({ id: user.username }, secretKey, { expiresIn: '1h' });
+};
+
 app.post('/api/register', (req, res) => {
     const { username, email } = req.body;
+    const existingUser = users.find(user => user.email === email);
 
-    if (users.find((user) => user.email === email)) {
+    if (existingUser) {
         return res.status(400).json({ message: 'User already registered' });
     }
 
-    const newUser = { id: users.length + 1, username, email };
-    users.push(newUser);
-
-    const token = jwt.sign({ id: newUser.id, email: newUser.email }, SECRET_KEY, { expiresIn: '1h' });
-    res.status(201).json({ token });
+    users.push({ username, email });
+    const token = generateToken({ username, email });
+    res.json({ message: 'User registered successfully', token });
 });
 
-app.get('/api/profile', (req, res) => {
-    const token = req.headers.authorization?.split(' ')[1];
-    if (!token) return res.status(401).json({ message: 'Unauthorized' });
+app.post('/api/login', (req, res) => {
+    const { email } = req.body;
+    const user = users.find(user => user.email === email);
 
-    try {
-        const decoded = jwt.verify(token, SECRET_KEY);
-        const user = users.find((user) => user.id === decoded.id);
-
-        if (!user) return res.status(404).json({ message: 'User not found' });
-
-        res.json({ user });
-    } catch (err) {
-        res.status(403).json({ message: 'Invalid token' });
+    if (!user) {
+        return res.status(400).json({ message: 'User not found' });
     }
+
+    const token = generateToken(user);
+    res.json({ message: 'Login successful', token });
 });
 
 app.get('/api/books', (req, res) => {
+    const books = loadBooks();
+    res.json(books);
+});
+
+app.get('/api/books/all', (req, res) => {
     const books = loadBooks();
     res.json(books);
 });
@@ -73,4 +79,3 @@ const PORT = 5001;
 app.listen(PORT, () => {
     console.log(`Server is running on http://localhost:${PORT}`);
 });
-
