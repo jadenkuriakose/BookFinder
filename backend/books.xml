@@ -3,14 +3,100 @@
     <title>The Great Gatsby</title>
     <author>F. Scott Fitzgerald</author>
     <isbn>9780743273565</isbn>
-    <genre>Fiction</genre>
-    <publishedYear>1925</publishedYear>
   </book>
   <book>
     <title>To Kill a Mockingbird</title>
     <author>Harper Lee</author>
     <isbn>9780060935467</isbn>
-    <genre>Fiction</genre>
-    <publishedYear>1960</publishedYear>
+  </book>
+  <book>
+    <title>1984</title>
+    <author>George Orwell</author>
+    <isbn>9780451524935</isbn>
+  </book>
+  <book>
+    <title>Pride and Prejudice</title>
+    <author>Jane Austen</author>
+    <isbn>9781503290563</isbn>
+  </book>
+  <book>
+    <title>The Catcher in the Rye</title>
+    <author>J.D. Salinger</author>
+    <isbn>9780316769488</isbn>
+  </book>
+  <book>
+    <title>The Hobbit</title>
+    <author>J.R.R. Tolkien</author>
+    <isbn>9780547928227</isbn>
+  </book>
+  <book>
+    <title>Fahrenheit 451</title>
+    <author>Ray Bradbury</author>
+    <isbn>9781451673319</isbn>
+  </book>
+  <book>
+    <title>The Alchemist</title>
+    <author>Paulo Coelho</author>
+    <isbn>9780061122415</isbn>
+  </book>
+  <book>
+    <title>Animal Farm</title>
+    <author>George Orwell</author>
+    <isbn>9780451526342</isbn>
+  </book>
+  <book>
+    <title>Lord of the Flies</title>
+    <author>William Golding</author>
+    <isbn>9780399501487</isbn>
+  </book>
+  <book>
+    <title>Harry Potter and the Sorcerer's Stone</title>
+    <author>J.K. Rowling</author>
+    <isbn>9780439708180</isbn>
+  </book>
+  <book>
+    <title>Brave New World</title>
+    <author>Aldous Huxley</author>
+    <isbn>9780060850524</isbn>
+  </book>
+  <book>
+    <title>The Book Thief</title>
+    <author>Markus Zusak</author>
+    <isbn>9780375842207</isbn>
+  </book>
+  <book>
+    <title>The Lord of the Rings</title>
+    <author>J.R.R. Tolkien</author>
+    <isbn>9780544003415</isbn>
+  </book>
+  <book>
+    <title>Crime and Punishment</title>
+    <author>Fyodor Dostoevsky</author>
+    <isbn>9780486415871</isbn>
+  </book>
+  <book>
+    <title>Wuthering Heights</title>
+    <author>Emily Brontë</author>
+    <isbn>9780553212587</isbn>
+  </book>
+  <book>
+    <title>The Adventures of Sherlock Holmes</title>
+    <author>Arthur Conan Doyle</author>
+    <isbn>9780451528018</isbn>
+  </book>
+  <book>
+    <title>Moby Dick</title>
+    <author>Herman Melville</author>
+    <isbn>9781503280786</isbn>
+  </book>
+  <book>
+    <title>War and Peace</title>
+    <author>Leo Tolstoy</author>
+    <isbn>9780199232765</isbn>
+  </book>
+  <book>
+    <title>A Tale of Two Cities</title>
+    <author>Charles Dickens</author>
+    <isbn>9781853260391</isbn>
   </book>
 </books>
