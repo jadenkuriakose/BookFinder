@@ -1,0 +1,4 @@
+#Book Finder
+This project is a simple web application that allows users to search for books based on title, author, or ISBN, and view all available books in a library. It also includes user registration and login functionality, enabling users to create an account and log in to the system. The backend is powered by a Node.js server using Express, where user data is stored in memory, and books are fetched from an XML file. The frontend is built using React, and Axios is used for handling API requests to interact with the backend.
+
+In addition to searching for books, users can register with their email, log in, and receive JSON Web Tokens (JWT) for authentication. The application provides messages for successful or failed user registration and login attempts. Users can also view all books in the database at once with the click of a button. This project demonstrates basic CRUD operations, user authentication, and frontend-backend interaction.
