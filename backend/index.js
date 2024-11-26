@@ -31,7 +31,7 @@ app.get('/api/books/search', (req, res) => {
         return (
             (!title || book.title.toLowerCase().includes(title.toLowerCase())) &&
             (!author || book.author.toLowerCase().includes(author.toLowerCase())) &&
-            (!isbn || book.isbn === isbn)
+            (!isbn || book.isbn.toString() === isbn.trim())
         );
     });
 
